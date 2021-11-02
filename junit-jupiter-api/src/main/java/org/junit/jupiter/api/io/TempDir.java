@@ -55,7 +55,7 @@ import org.junit.jupiter.api.extension.ParameterResolutionException;
  *
  * <h4>Old behavior</h4>
  * <p>You can revert to the old behavior of using a single temporary directory
- * by setting the {@code junit.jupiter.tempdir.scope} configuration parameter to
+ * by setting the {@value #SCOPE_PROPERTY_NAME} configuration parameter to
  * {@code per_context}. In that case, the scope of the temporary directory
  * depends on where the first {@code @TempDir} annotation is encountered when
  * executing a test class. The temporary directory will be shared by all tests
@@ -83,4 +83,7 @@ import org.junit.jupiter.api.extension.ParameterResolutionException;
 @Documented
 @API(status = EXPERIMENTAL, since = "5.4")
 public @interface TempDir {
+
+	String SCOPE_PROPERTY_NAME = "junit.jupiter.tempdir.scope";
+
 }
